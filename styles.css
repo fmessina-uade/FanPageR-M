@@ -1,0 +1,152 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+:root{
+  --bg: #0b1020;           
+  --panel: #121a2b;        
+  --text: #eaf6ff;         
+  --muted: #b8c4d9;
+  --portal: #31ff60;       
+  --cy: #3bd0ff;           
+  --warning: #f0ff7b;
+}
+
+
+body{
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(49,255,96,.08), transparent 60%) , var(--bg);
+  color: var(--text);
+  font-family: "Nunito Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+}
+h1, h2, h3{
+  font-family: "Bangers", system-ui, sans-serif;
+  letter-spacing: .5px;
+  margin: 0 0 .25rem 0;
+  color: var(--cy);
+  text-shadow: 0 0 12px rgba(59,208,255,.25);
+}
+p{ margin: .25rem 0 1rem; color: var(--text); }
+
+header{
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 1rem;
+  padding: .8rem 1rem;
+  background: linear-gradient(90deg, #0e1525, var(--panel));
+  border-bottom: 2px solid var(--portal);
+}
+.logo{ height: 72px; }
+
+nav ul{ list-style: none; margin: 0; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
+nav a{
+  color: var(--text); text-decoration: none; font-weight: 700;
+  padding: .5rem .9rem; border-radius: 999px;
+  outline: none; border: 2px solid transparent;
+  transition: background .2s ease, box-shadow .2s ease, transform .12s ease;
+}
+nav a:hover{ background: rgba(59,208,255,.14); }
+nav a:focus-visible{ box-shadow: 0 0 0 3px rgba(59,208,255,.4); }
+
+main{ max-width: 1080px; margin: 0 auto; padding: 1.25rem; }
+section{ margin: 1.25rem 0 2rem; }
+
+img{ max-width: 100%; height: auto; display: block; }
+.img-frame{
+  border: 3px solid var(--cy);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 0 3px rgba(59,208,255,.15) inset;
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+.img-frame:hover{
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,.45), 0 0 0 3px rgba(49,255,96,.25) inset;
+  filter: saturate(1.08);
+}
+
+.btn{
+  display: inline-block;
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-primary{
+  background: linear-gradient(180deg, var(--cy), #29a9d6);
+  color: #08121b;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 20px rgba(59,208,255,.25);
+}
+.btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 10px 26px rgba(59,208,255,.35); }
+.btn-outline{
+  background: transparent; color: var(--text);
+  border: 2px solid var(--portal);
+}
+.btn-outline:hover{ background: rgba(49,255,96,.15); }
+
+a{ color: var(--warning); }
+a:hover{ color: var(--cy); }
+
+.card{
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+footer{
+  background: #0a1f14;                 
+  color: #c3ffd7;
+  border-top: 2px solid var(--portal);
+  margin-top: 2.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a.pill{
+  border: 2px solid rgba(59,208,255,.35);
+  border-radius: 999px;
+  padding: .5rem 1rem;
+}
+nav a.pill:hover{
+  background: rgba(59,208,255,.14);
+  border-color: var(--cy);
+}
+
+nav a.pill-cta{
+  border-color: var(--portal);
+  box-shadow: 0 0 0 3px rgba(49,255,96,.25) inset;
+}
+nav a.pill-cta:hover{
+  background: rgba(49,255,96,.12);
+}
+
+.popup{                    
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.55);
+  display: none; place-items: center;
+  padding: 1rem; z-index: 50;
+}
+.popup__card{
+  max-width: 460px; width: 100%;
+  background: var(--panel);
+  border: 2px solid var(--portal);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  text-align: center;
+}
+.popup:target{ display: grid; }
+
+
+/* formulario */
+form{ display: grid; gap: .75rem; max-width: 640px; }
+label{ font-weight: 700; }
+input, textarea{
+  background: #0f1a2a; color: var(--text);
+  border: 2px solid rgba(59,208,255,.35);
+  border-radius: 12px;
+  padding: .7rem .85rem; width: 100%;
+}
+input:focus, textarea:focus{ outline: none; box-shadow: 0 0 0 3px rgba(49,255,96,.3); }

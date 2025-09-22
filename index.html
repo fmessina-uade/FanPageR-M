@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rick & Morty</title>
+  <meta name="description" content="Sitio web dedicado a la serie Rick & Morty" />
+  <link rel="icon" href="img/favicon.avif" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header> <!-- Obligatorio -->
+    <img class="logo" src="img/Rick_and_Morty.png" alt="Logo Rick & Morty" />
+    <nav aria-label="Principal">
+      <ul>
+        <li><a class="pill" href="index.html">Home</a></li>
+        <li><a class="pill" href="personajes.html">Personajes</a></li>
+        <li><a class="pill" href="capitulos.html">Capítulos</a></li>
+        <li><a class="pill pill-cta" href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido"> <!-- Obligatorio -->
+    <section id="inicio">
+      <h2>¡Bienvenidos!</h2>
+      <p>Este sitio reúne mis capítulos favoritos de <em>Rick & Morty</em> y los personajes que los hacen inolvidables. Vas a encontrar fichas rápidas, referencias escondidas y datos clave para disfrutar cada aventura en el multiverso.</p>
+    </section>
+    <figure class="card">
+    <img class="img-frame" src="img/r-and-m-imagen.jpg" alt="Rick & Morty" />
+  </figure>
+
+  <section class="card">
+    <h3>Diseñado por</h3>
+    <img class="img-frame" src="img/facu_r-m.png" alt="Facu Rick y Morty" />
+    <p><a class="btn btn-primary" href="personajes.html">Ver personajes</a></p>
+  </section>
+
+  <section id="contacto" class="card">
+    <h2>Contacto para fans</h2>
+    <p>Dejame un comentario o suscribite para novedades.</p>
+
+    <form action="#" method="get">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" name="nombre" type="text" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="comentario">Comentario</label>
+      <textarea id="comentario" name="comentario" rows="4" placeholder="Tu mensaje..."></textarea>
+
+      <button class="btn btn-primary" type="submit" formaction="#enviado">Enviar</button>
+    </form>
+  </section>
+
+  <div id="enviado" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+    <div class="popup__card">
+      <h3 id="popup-title">¡Suscripción enviada!</h3>
+      <p>Gracias por sumarte. Este es un aviso de demostración.</p>
+      <a class="btn btn-primary" href="#contenido">Cerrar</a>
+    </div>
+  </div>
+
+
+  </main>
+
+  <footer> <!-- Obligatorio -->
+    <small>© <span id="year"></span> Copyright Facundo Messina - UADE</small>
+  </footer>
+
+  <script defer>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="app.js" defer></script>
+</body>
+</html>
